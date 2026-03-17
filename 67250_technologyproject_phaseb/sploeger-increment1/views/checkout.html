@@ -4,13 +4,13 @@
     <meta name="author" content="Serena Ploeger">
     <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
     <meta name="description" content="MonoMuse website redesign project">
-    <title>MonoMuse</title>
+    <title>Checkout | MonoMuse</title>
 </head>
 
 <body>
 
 <header>
-    <h1>MonoMuse</h1>
+    <h1>Checkout</h1>
     <nav>
         <a href="../index.html">Home</a>
         <a href="explore.html">Explore</a>
@@ -20,21 +20,29 @@
     </nav>
 </header>
     
-<div class="main">
-    <h2>Welcome to MonoMuse</h2>
-
+<form>
     <p>
-        MonoMuse is a modern museum focused on the relationshop between art, technology, and human expression. 
-        Our exhibitions feature innovative digital works, interactive installations, and contanantly evolving 
-        collections that highlight how technology is shaping contemporary creativity. Visitors are invited to 
-        explore how new ideas, engage with immersive experiences, and discover how artistic expression is 
-        evolving in a digital world. Whether you are visiting for the first time or returning to see something 
-        new, MonoMuse offeres inspiring exhibitions, hands-on activities, and events that celebrate creativity 
-        and curiosity.  
+        <label for="name">Name: (required)</label>
     </p>
-
-    <a href="tickets.html">Buy Tickets</a>
-</div>
+    <p>
+        <input type="text" id="name" name="name" required>
+    </p>
+    <p>
+        <label for="email">Email: (required)</label>
+    </p>
+    <p>
+        <input type="email" id="email" name="email" required>
+    </p>
+    <p>
+        <label for="quantity">Number of Tickets: (required)</label>
+    </p>
+    <p>
+        <input type="number" id="quantity" name="quantity" required>
+    </p>
+    <p>
+        <button type="submit">Submit</button>
+    </p>
+</form>
 
 <footer>
     <p>© 2026 MonoMuse. All rights reserved.</p>
