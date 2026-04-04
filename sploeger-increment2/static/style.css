@@ -50,17 +50,27 @@ nav a:hover {
   font-weight: 600;
 }
 
-/* changes color of buy tickets button when mouse is hovering */
 .cta:hover {
   background-color: #727e63;
   color: #FAF9EF;
   border: none;
 }
 
-/* footer */
 footer {
   border-top: 2px solid #0F1F2E;
   padding: 18px 16px;
   text-align: center;
   color: #727e63;
+}
+
+th {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: fit-content;
+  background-color: #0F1F2E;
+  color: #FAF9EF;
+}
+
+tr:nth-child(odd) {
+  background-color: #9BCFE8;
 }
