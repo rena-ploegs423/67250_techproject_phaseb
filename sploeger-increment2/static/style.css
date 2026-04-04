@@ -10,7 +10,7 @@
 }
 
 #logo {
-  width: 30%;
+  width: 35%;
   display: block;
 }
 
@@ -27,20 +27,20 @@ nav a:hover {
   border-color: #727e63;
   background-color: #727e63;
   color: #FAF9EF;
-  border-radius: 12px;
 }
 
 #navselected {
   color: #FFA033;
 }
 
+/* changes color of navigation buttons when mouse is hovering */
 #navselected:hover {
   border-color: #727e63;
   background-color: #727e63;
   color: #FAF9EF;
-  border-radius: 12px;
 }
 
+/* buy tickets button */
 .cta {
   background-color: #FFA033;
   color: #0F1F2E;
@@ -48,12 +48,19 @@ nav a:hover {
   border-radius: 12px;
   padding: 8px 10px;
   font-weight: 600;
-  text-decoration: none;
 }
 
+/* changes color of buy tickets button when mouse is hovering */
 .cta:hover {
   background-color: #727e63;
   color: #FAF9EF;
-  border-color: transparent;
-  border-radius: 12px;
+  border: none;
+}
+
+/* footer */
+footer {
+  border-top: 2px solid #0F1F2E;
+  padding: 18px 16px;
+  text-align: center;
+  color: #727e63;
 }
