@@ -6,3 +6,8 @@
   font-weight: 100;
   line-height: 1.5;
 }
+
+#logo {
+  width: 18%;
+  display: block;
+}
