@@ -25,8 +25,35 @@ nav a {
 
 nav a:hover {
   border-color: #727e63;
+  background-color: #727e63;
+  color: #FAF9EF;
+  border-radius: 12px;
 }
 
 #navselected {
   color: #FFA033;
+}
+
+#navselected:hover {
+  border-color: #727e63;
+  background-color: #727e63;
+  color: #FAF9EF;
+  border-radius: 12px;
+}
+
+.cta {
+  background-color: #FFA033;
+  color: #0F1F2E;
+  border: none;
+  border-radius: 12px;
+  padding: 8px 10px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cta:hover {
+  background-color: #727e63;
+  color: #FAF9EF;
+  border-color: transparent;
+  border-radius: 12px;
 }
