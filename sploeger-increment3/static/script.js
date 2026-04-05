@@ -31,8 +31,8 @@ if (C.length > z) {
 }
 
 // Array creation
-L1 = ["Watermelon","Pineapple","Pear","Banana"];
-L2 = ["Apple","Banana","Kiwi","Orange"];
+// L1 = ["Watermelon","Pineapple","Pear","Banana"];
+// L2 = ["Apple","Banana","Kiwi","Orange"];
 
 // for loop function to find the banana in arrays
 // function findTheBanana(arr) {
@@ -59,3 +59,23 @@ L2 = ["Apple","Banana","Kiwi","Orange"];
 // Call function in both arrays
 // findTheBanana(L1);
 // findTheBanana(L2);
+
+// Greeting function to display a message based on the current hour of the day
+var now = new Date();
+var hour = now.getHours();
+
+function greeting(x) { 
+    if (x < 5 || x >= 20) {
+        document.getElementById("greeting").innerHTML = "Good night!";
+    } else if (x < 12) {
+        document.getElementById("greeting").innerHTML = "Good morning!";
+    }
+    else if (x < 18) {
+        document.getElementById("greeting").innerHTML = "Good afternoon!";
+    }
+    else {
+        document.getElementById("greeting").innerHTML = "Good evening!";
+    }
+}
+
+greeting(hour);
