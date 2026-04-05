@@ -80,5 +80,11 @@ function greeting(x) {
     }
 }
 
-
 greeting(hour);
+
+// Function to add the current year to the footer
+function addYear() {
+    document.getElementById("copyYear").innerHTML = "© " + new Date().getFullYear() + " MonoMuse. All rights reserved.";
+}
+
+addYear();
