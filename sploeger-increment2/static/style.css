@@ -1,3 +1,4 @@
+/* Global styling for the MonoMuse Museum website */
 * {
   margin: 5px;
   padding: 5px;
@@ -9,11 +10,13 @@
   color: #0F1F2E;
 }
 
+/* Header logo styling */
 #logo {
   width: 35%;
   display: block;
 }
 
+/* Navigation styling */
 nav a {
   text-decoration: none;
   color: #0F1F2E;
@@ -23,24 +26,26 @@ nav a {
   border-radius: 12px;
 }
 
+/* Hover effect for navigation items */
 nav a:hover {
   border-color: #727e63;
   background-color: #727e63;
   color: #FAF9EF;
 }
 
+/* Styling for the selected navigation item */
 #navselected {
   color: #FFA033;
 }
 
-/* changes color of navigation buttons when mouse is hovering */
+/* Hover effect for the selected navigation item */
 #navselected:hover {
   border-color: #727e63;
   background-color: #727e63;
   color: #FAF9EF;
 }
 
-/* buy tickets button */
+/* Call-to-action button styling */
 .cta {
   background-color: #FFA033;
   color: #0F1F2E;
@@ -50,12 +55,14 @@ nav a:hover {
   font-weight: 600;
 }
 
+/* Hover effect for call-to-action buttons */
 .cta:hover {
   background-color: #727e63;
   color: #FAF9EF;
   border: none;
 }
 
+/* Footer styling */
 footer {
   border-top: 2px solid #0F1F2E;
   padding: 18px 16px;
@@ -63,6 +70,7 @@ footer {
   color: #727e63;
 }
 
+/* Table styling */
 th {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -71,6 +79,8 @@ th {
   color: #FAF9EF;
 }
 
-tr:nth-child(odd) {
+/* Alternate row colors for better readability */
+tr:nth-child(even) td {
   background-color: #9BCFE8;
 }
+
