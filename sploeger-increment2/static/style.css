@@ -84,3 +84,9 @@ tr:nth-child(even) td {
   background-color: #9BCFE8;
 }
 
+/* Form styling */
+form * {
+  margin: auto;
+  text-align: center;
+}
+
