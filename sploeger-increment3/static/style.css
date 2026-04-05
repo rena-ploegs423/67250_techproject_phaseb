@@ -1,0 +1,92 @@
+/* Global styling for the MonoMuse Museum website */
+* {
+  margin: 5px;
+  padding: 5px;
+  font-family: 'Open Sans', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  line-height: 1.5;
+  background: #FAF9EF;
+  color: #0F1F2E;
+}
+
+/* Header logo styling */
+#logo {
+  width: 35%;
+  display: block;
+}
+
+/* Navigation styling */
+nav a {
+  text-decoration: none;
+  color: #0F1F2E;
+  font-weight: 400;
+  padding: 8px 10px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+}
+
+/* Hover effect for navigation items */
+nav a:hover {
+  border-color: #727e63;
+  background-color: #727e63;
+  color: #FAF9EF;
+}
+
+/* Styling for the selected navigation item */
+#navselected {
+  color: #FFA033;
+}
+
+/* Hover effect for the selected navigation item */
+#navselected:hover {
+  border-color: #727e63;
+  background-color: #727e63;
+  color: #FAF9EF;
+}
+
+/* Call-to-action button styling */
+.cta {
+  background-color: #FFA033;
+  color: #0F1F2E;
+  border: none;
+  border-radius: 12px;
+  padding: 8px 10px;
+  font-weight: 600;
+}
+
+/* Hover effect for call-to-action buttons */
+.cta:hover {
+  background-color: #727e63;
+  color: #FAF9EF;
+  border: none;
+}
+
+/* Footer styling */
+footer {
+  border-top: 2px solid #0F1F2E;
+  padding: 18px 16px;
+  text-align: center;
+  color: #727e63;
+}
+
+/* Table styling */
+th {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: fit-content;
+  background-color: #0F1F2E;
+  color: #FAF9EF;
+}
+
+/* Alternate row colors for better readability */
+tr:nth-child(even) td {
+  background-color: #9BCFE8;
+}
+
+/* Form styling */
+form * {
+  margin: auto;
+  text-align: center;
+}
+
