@@ -65,17 +65,20 @@ var now = new Date();
 var hour = now.getHours();
 
 function greeting(x) { 
-    if (x < 5 || x >= 20) {
-        document.getElementById("greeting").innerHTML = "Good night!";
-    } else if (x < 12) {
-        document.getElementById("greeting").innerHTML = "Good morning!";
-    }
-    else if (x < 18) {
-        document.getElementById("greeting").innerHTML = "Good afternoon!";
-    }
-    else {
-        document.getElementById("greeting").innerHTML = "Good evening!";
+    if (document.getElementById("greeting")) {
+        if (x < 5 || x >= 20) {
+            document.getElementById("greeting").innerHTML = "Good night!";
+        } else if (x < 12) {
+            document.getElementById("greeting").innerHTML = "Good morning!";
+        }
+        else if (x < 18) {
+            document.getElementById("greeting").innerHTML = "Good afternoon!";
+        }
+        else {
+            document.getElementById("greeting").innerHTML = "Good evening!";
+        }
     }
 }
+
 
 greeting(hour);
