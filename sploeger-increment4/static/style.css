@@ -80,7 +80,7 @@ th {
 }
 
 /* Alternate row colors for better readability */
-tr:nth-child(even) td {
+tr:nth-child(odd) td {
   background-color: #9BCFE8;
 }
 
@@ -109,6 +109,7 @@ form p {
    display: flex; /* Uses Flexbox for internal layout */
    justify-content: right;   /* Right aligns the content */
 }
+/**/
 .main {
   grid-area: main; 
 }
@@ -120,37 +121,17 @@ form p {
 }
 
 /* Hide the long introduction and "Read Less" button by default */
-#longIntro {
+#readLess, #longIntro {
   display: none;
 }
 
-#readLess {
-  display: none;
+#readLess, #readMore {
+  font-style: italic;
+  background-color: #727e63;
+  color: #FAF9EF;
 }
 
 /* Hide the purchase form by default */
 #purchaseForm {
   display: none; 
 }
-
-/* Responsive design for mobile devices */
-@media only screen and (max-width: 650px) {
-  .container {
-    grid-template-areas:
-      'header'
-      'nav_bar'
-      'main'
-      'footer';
-    grid-template-columns: 1fr;
-  }
-  #logo {
-    width: 60%;
-  }
-
-  .nav_bar {
-    justify-content: center;
-    fle
-  }
-}
-
-
