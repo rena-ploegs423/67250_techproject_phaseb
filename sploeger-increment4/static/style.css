@@ -85,7 +85,7 @@ tr:nth-child(even) td {
 }
 
 /* Form styling */
-form * {
+form p {
   margin: auto;
   text-align: center;
 }
@@ -117,5 +117,14 @@ form * {
 }
 .footer {
    grid-area: footer;
+}
+
+/* Hide the long introduction and "Read Less" button by default */
+#longIntro {
+  display: none;
+}
+
+#readLess {
+  display: none;
 }
 
