@@ -26,8 +26,8 @@ if (C.length > z) {
     if (C.length < z) {
         console.log(z)
     }
-} else {
-    console.log("good job!")
+}   else {
+        console.log("good job!")
 }
 
 // Array creation
@@ -130,9 +130,3 @@ function showForm() {
     document.getElementById("purchaseForm").style.display = "block";
 } 
 
-
-// Function to toggle the visibility of navigation links when the hamburger menu is clicked
-function toggleMenu() {
-    const nav = document.querySelector('.nav_bar'); 
-    nav.classList.toggle("responsive");
-}
