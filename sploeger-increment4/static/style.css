@@ -128,3 +128,9 @@ form p {
   display: none;
 }
 
+/* Hide the purchase form by default */
+#purchaseForm {
+  display: none; 
+}
+
+

@@ -123,3 +123,9 @@ ActiveNav();
     $("#readLess").show();   // Show the "Read Less" button
     $("#readMore").hide();   // Hide the "Read More" button  
   });
+
+  
+// Function to show the purchase form when the "Buy Tickets" button is clicked
+function showForm() {
+    document.getElementById("purchaseForm").style.display = "block";
+} 
