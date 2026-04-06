@@ -132,3 +132,25 @@ form p {
 #purchaseForm {
   display: none; 
 }
+
+/* Responsive design for mobile devices */
+@media only screen and (max-width: 650px) {
+  .container {
+    grid-template-areas:
+      'header'
+      'nav_bar'
+      'main'
+      'footer';
+    grid-template-columns: 1fr;
+  }
+  #logo {
+    width: 60%;
+  }
+
+  .nav_bar {
+    justify-content: center;
+    fle
+  }
+}
+
+
