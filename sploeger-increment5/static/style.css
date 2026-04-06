@@ -107,7 +107,8 @@ form p {
 .nav_bar {
    grid-area: nav_bar;
    display: flex; /* Uses Flexbox for internal layout */
-   justify-content: right;   /* Right aligns the content */
+   justify-content: flex-end;  
+   gap: 10px; 
 }
 /**/
 .main {
@@ -134,4 +135,70 @@ form p {
 /* Hide the purchase form by default */
 #purchaseForm {
   display: none; 
+}
+
+/* Hide hamburger by default (desktop) */
+.nav_bar .icon {
+  display: none;
+}
+
+/* Responsive design for mobile devices */
+@media only screen and (max-width: 650px) {
+
+  .container {
+    grid-template-areas:
+      'header'
+      'nav_bar'
+      'main'
+      'main-img'
+      'footer';
+  }
+
+  /* Hide all navigation links except hamburger */
+  .nav_bar a:not(.icon) {
+    display: none;
+  }
+
+  /* Show hamburger */
+  .nav_bar .icon {
+    display: block;
+    margin-left: auto;
+    cursor: pointer;
+    font-size: 24px;
+  }
+
+  /* Stack items vertically when toggled */
+  .nav_bar.responsive {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Show all links when expanded */
+  .nav_bar.responsive a:not(.icon) {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  /* Keep hamburger aligned right */
+  .nav_bar.responsive .icon {
+    display: block;
+    align-self: flex-end;
+  }
+}
+
+
+/* Iframe styling */
+iframe {
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  display: block;
+  margin: 20px auto;
+}
+
+
+/* Map container styling */
+#map {
+  height: 180px;
 }

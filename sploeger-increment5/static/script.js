@@ -124,3 +124,18 @@ function showForm() {
     document.getElementById("purchaseForm").style.display = "block";
 } 
 
+// Function to toggle the navigation menu on smaller screens
+function toggleMenu() {
+    const nav = document.querySelector(".nav_bar");
+    nav.classList.toggle("responsive");
+}
+
+
+// Initialize the map using Leaflet.js
+var map = L.map('map').setView([40.467459, -79.963749], 14);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+
+L.marker([40.467459, -79.963749]).addTo(map);

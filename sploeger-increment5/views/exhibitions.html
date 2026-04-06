@@ -13,7 +13,7 @@
     <title>Exhibitions | MonoMuse</title>
 </head>
 
-<body onload="addYear()"> 
+<body> 
 
 <!-- This page displays information about the museum's current exhibitions. -->
 <div class="container">
@@ -25,12 +25,14 @@
         <a href="explore.html">Explore</a>
         <a href="exhibitions.html">Exhibitions</a>
         <a href="buytickets.html">Buy Tickets</a>
+        <!-- Hamburger icon -->
+        <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">&#9776;</a>
     </nav>
  
 <!-- Each exhibition has a title and a brief description of what visitors can expect to see and experience. -->
     <main class="main">
         <h1>Exhibitions</h1>
-        <h3>Exhibition 1: Reflections in Motion</h3>
+        <h2>Exhibition 1: Reflections in Motion</h2>
 
         <p>
             This exhibition examines how light, sound, and movement can shape the way visitors
@@ -39,13 +41,22 @@
             environments into artistic experiences. 
         </p>
 
-        <h3>Exhibition 2: Future Memory</h3>
+        <h2>Exhibition 2: Future Memory</h2>
 
         <p>
             Future Memory explores the relationship between personal memory and digital archives.
             Featuring multimedia pieces, projection art, and interactive storytelling, the exhibition
             asks how technology preserves, reshapes, and reimagines the stories we carry with us. 
         </p>
+
+        <h2>Featured Exhibition Experience</h2>
+            <iframe 
+            src="https://www.youtube.com/embed/Nxh-5EXXGaM"
+            title="Museum Exhibition Video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+            </iframe>
     </main>
 
     <footer class="footer">
