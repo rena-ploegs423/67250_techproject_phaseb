@@ -136,6 +136,3 @@ function toggleMenu() {
     const nav = document.querySelector('.nav_bar'); 
     nav.classList.toggle("responsive");
 }
-
-document.getElementById("hamburger") &&
-document.getElementById("hamburger").addEventListener("click", toggleMenu);
