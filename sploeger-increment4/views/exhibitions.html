@@ -15,42 +15,43 @@
 <body onload="addYear()"> 
 
 <!-- This page displays information about the museum's current exhibitions. -->
-<header>
-    <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
-    <nav>
+<div class="container">
+    <header class="header">
+        <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
+    </header> 
+    <nav class="nav_bar">
         <a href="../index.html">Home</a>
         <a href="explore.html">Explore</a>
-        <a id="navselected" href="exhibitions.html">Tickets</a>
+        <a id="navselected" href="exhibitions.html">Exhibitions</a>
         <a href="tickets.html">Tickets</a>
         <a href="checkout.html">Checkout</a>
     </nav>
-</header>
  
 <!-- Each exhibition has a title and a brief description of what visitors can expect to see and experience. -->
-<div class="main">
+    <main class="main">
 
-    <h3>Exhibition 1: Reflections in Motion</h3>
+        <h3>Exhibition 1: Reflections in Motion</h3>
 
-    <p>
-        This exhibition examines how light, sound, and movement can shape the way visitors
-        experience a space. Through immersive installations and interactive digital works,
-        Reflections in Motion invites guests to consider how technology can transform ordinary
-        environments into artistic experiences. 
-    </p>
+        <p>
+            This exhibition examines how light, sound, and movement can shape the way visitors
+            experience a space. Through immersive installations and interactive digital works,
+            Reflections in Motion invites guests to consider how technology can transform ordinary
+            environments into artistic experiences. 
+        </p>
 
-    <h3>Exhibition 2: Future Memory</h3>
+        <h3>Exhibition 2: Future Memory</h3>
 
-    <p>
-        Future Memory explores the relationship between personal memory and digital archives.
-        Featuring multimedia pieces, projection art, and interactive storytelling, the exhibition
-        asks how technology preserves, reshapes, and reimagines the stories we carry with us. 
-    </p>
+        <p>
+            Future Memory explores the relationship between personal memory and digital archives.
+            Featuring multimedia pieces, projection art, and interactive storytelling, the exhibition
+            asks how technology preserves, reshapes, and reimagines the stories we carry with us. 
+        </p>
+    </main>
 
+    <footer class="footer">
+        <p id="copyYear"></p>
+    </footer>
 </div>
-
-<footer>
-    <p id="copyYear"></p>
-</footer>
 
 </body>
 </html>

@@ -88,3 +88,23 @@ function addYear() {
 }
 
 addYear();
+
+
+/* Sets the 'active' class on the navigation link that matches the current page URL.*/
+
+function ActiveNav() {
+    // Get all navigation links
+    const navLinks = document.querySelectorAll('nav li a');
+
+    // Iterate over each link
+    navLinks.forEach(link => {
+    // Check if the link's href matches the current window location
+        if (window.location.href === link.href) {
+            // Add the 'active' class to highlight the current page
+            link.classList.add("active");
+        }
+    });
+}
+
+// Execute the function to set the active navigation link on page load
+ActiveNav();

@@ -15,45 +15,49 @@
 <!-- This page is a simple form for users to enter their name, email, and number of tickets they want to purchase. -->
 <body onload="addYear()"> 
 
-<header>
-    <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
-    <nav>
+    <header class="header">
+        <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
+    </header>    
+    <nav class="nav_bar">  
+        <nav>
         <a href="../index.html">Home</a>
         <a href="explore.html">Explore</a>
         <a href="exhibitions.html">Exhibitions</a>
         <a href="tickets.html">Tickets</a>
-        <a id="navselected" href="checkout.html">Tickets</a>
+        <a id="navselected" href="checkout.html">Checkout</a>
     </nav>
-</header>
-  
-<!-- The form below collects the user's name, email, and number of tickets they want to purchase. All fields are required. -->
-<form>
-    <p>
-        <label for="name">Name: (required)</label>
-    </p>
-    <p>
-        <input type="text" id="name" name="name" required>
-    </p>
-    <p>
-        <label for="email">Email: (required)</label>
-    </p>
-    <p>
-        <input type="email" id="email" name="email" required>
-    </p>
-    <p>
-        <label for="quantity">Number of Tickets: (required)</label>
-    </p>
-    <p>
-        <input type="number" id="quantity" name="quantity" required>
-    </p>
-    <p>
-        <button type="submit">Submit</button>
-    </p>
-</form>
 
-<footer>
-    <p id="copyYear"></p>
-</footer>
+    <main class="main">
+    <!-- The form below collects the user's name, email, and number of tickets they want to purchase. All fields are required. -->
+        <form>
+            <p>
+                <label for="name">Name: (required)</label>
+            </p>
+            <p>
+                <input type="text" id="name" name="name" required>
+            </p>
+            <p>
+                <label for="email">Email: (required)</label>
+            </p>
+            <p>
+                <input type="email" id="email" name="email" required>
+            </p>
+            <p>
+                <label for="quantity">Number of Tickets: (required)</label>
+            </p>
+            <p>
+                <input type="number" id="quantity" name="quantity" required>
+            </p>
+            <p>
+                <button type="submit">Submit</button>
+            </p>
+        </form>
+    </main>
+
+    <footer class="footer">
+        <p id="copyYear"></p>
+    </footer>
+</div>
 
 </body>
 </html>
