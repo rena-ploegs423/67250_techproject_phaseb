@@ -108,29 +108,77 @@ form p {
    grid-area: nav_bar;
    display: flex; /* Uses Flexbox for internal layout */
    justify-content: right;   /* Right aligns the content */
-}
-.main {
-  grid-area: main; 
-}
-.main_img {
-   grid-area: main-img; 
-}
-.footer {
-   grid-area: footer;
+   gap: 10px; /* Adds space between navigation items */
 }
 
-/* Hide the long introduction and "Read Less" button by default */
-#longIntro {
+/* Hide all navigation links except the hamburger icon on small screens */
+.nav_bar a:not(-icon) { 
   display: none;
 }
 
-#readLess {
+/* When menu is toggled, stack items vertically */
+.nav_bar .icon { 
+  display: block;
+  margin-left: auto; /* Push icon to the right */ 
+  cursor: pointer; /* Show pointer on hover */
+  font-size: 24px; /*Make icon larger and visible */
+}
+
+/* Responsive design for mobile devices */
+.nav_bar.responsive{
+  flex-direction: column; /* Stack items vertically */
+  align-items: flex-start; /* Align items to the left */
+}
+
+/* Show all navigation links when the hamburger menu is expanded */
+.nav_bar.responsive a:not(.icon) { 
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+/* Keep hamburger icon aligned to the right in expanded view */
+.nav_bar.responsive .icon{ 
+  display: block;
+  align-self: flex-end;
+}
+
+
+/* Hide hamburger by default */
+#hamburger {
   display: none;
 }
 
-/* Hide the purchase form by default */
-#purchaseForm {
-  display: none; 
-}
+/* Responsive design for mobile devices */
+@media only screen and (max-width: 650px) {
+  .container {
+    grid-template-areas:
+      'header'
+      'nav_bar'
+      'main'
+      'footer';
+    grid-template-columns: 1fr;
+ 
+  }
+  #logo {
+    width: 75%;
+  }
 
+  .nav_bar {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  nav a:not(#hamburger) {
+      display: none;
+    }
+
+  #hamburger {
+    display: block;
+  }
+
+  nav a.responsive {
+    display: block;
+  }
+}
 

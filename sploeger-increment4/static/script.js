@@ -129,3 +129,13 @@ ActiveNav();
 function showForm() {
     document.getElementById("purchaseForm").style.display = "block";
 } 
+
+
+// Function to toggle the visibility of navigation links when the hamburger menu is clicked
+function toggleMenu() {
+    const nav = document.querySelector('.nav_bar'); 
+    nav.classList.toggle("responsive");
+}
+
+document.getElementById("hamburger") &&
+document.getElementById("hamburger").addEventListener("click", toggleMenu);
