@@ -25,7 +25,7 @@
         <a href="../index.html">Home</a>
         <a href="explore.html">Explore</a>
         <a href="exhibitions.html">Exhibitions</a>
-        <a href="buytickets.html">Buy Tickets</a>
+        <a href="buytickets.html" class="cta">Buy Tickets</a>
         <!-- Hamburger icon -->
         <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">&#9776;</a>
  
@@ -76,6 +76,100 @@
                 <td>12:00 AM - 6:00 PM</td>
             </tr>
         </table>
+
+
+        <h2>Purchase Tickets</h2>
+
+        <div id="checkoutForm">
+            <form id="ticketForm">
+                <!-- Visit Date -->
+                <p>
+                    <label for="visitDate">Visit Date: (required)</label>
+                </p>
+                <p>
+                    <input type="date" id="visitDate" name="visitDate" required>
+                    <span class="error-msg" id="visitDateError" role="alert">Please select a visit date.</span>
+                </p>
+                
+                <!-- Ticket Type -->
+                <p>
+                    <label for="ticketType">Ticket Type: (required)</label>
+                </p>
+                <p>
+                    <select id="ticketType" name="ticketType" required>
+                        <option value="">Select a ticket type</option>
+                        <option value="adult">Adult (General)</option>
+                        <option value="student">Student</option>
+                        <option value="member">Member</option>
+                    </select>
+                    <span class="error-msg" id="ticketTypeError" role="alert">Please select a ticket type.</span>
+                </p>
+
+                <!-- Ticket Quantity -->
+                <p>
+                    <label for="quantity">Number of Tickets: (required)</label>
+                </p>
+                <p>
+                    <input type="number" id="quantity" name="quantity" required>
+                    <span class="error-msg" id="quantityError" role="alert">Please enter a valid number of tickets.</span>
+                </p>
+
+                <!-- Calculated Price-->
+                <p id="priceDisplay">Estimated Total: <strong id="totalPrice">$0.00</strong></p>
+
+                <!-- Email -->
+                <p>
+                    <label for="email">Email: (required)</label>
+                </p>
+                <p>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error-msg" id="emailError" role="alert">Please enter a valid email address.</span>
+                </p>
+
+                <!-- Zip Code -->
+                <p>
+                    <label for="zip">Zip Code: (optional)</label>
+                </p>
+                <p>
+                    <input type="text" id="zipCode" name="zipCode" placeholder="5-digit zip code" maxlength="5">
+                    <span class="error-msg" id="zipCodeError" role="alert">Zip code must be exactly 5 digits.</span>
+                </p>
+
+                <!-- Mailing List -->
+                <p>
+                    <label for="mailingList">Join Mailing List: (optional)</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="mailingList" name="mailingList">
+                    <span class="error-msg" id="mailingListError" role="alert">Please select an option.</span>
+                </p>
+
+                <!-- Submit Button -->
+                <p>
+                    <button type="submit" onclick="alert('Redirecting to payment system.')">Submit Order</button>
+                </p>
+            </form>
+        </div>
+        
+        <div id="confirmationSection" style="display:none;" role="region" aria-label="Order confirmation"></div>
+            <h2>Order Confirmed!</h2>
+            <p>Thank you for your purchase. A confirmation email has been sent to you.</p>
+            <p>We look forward to welcoming you to MonoMuse! Here is a summary of your order:</p>
+            <table>
+                <tr>
+                    <th>Visit Date</th>
+                    <th>Ticket Type</th>
+                    <th>Quantity</th>
+                    <th>Total Price</th>
+                </tr>
+                <tr>
+                    <td id="confirmVisitDate"></td>
+                    <td id="confirmTicketType"></td>
+                    <td id="confirmQuantity"></td>
+                    <td id="confirmTotalPrice"></td>
+                </tr>
+            </table>
+            <p>If you have any questions about your order, please contact us at support@monomuse.com.</p>
 
         <h2>Available Dates</h2>
         <table>

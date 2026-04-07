@@ -20,14 +20,16 @@
 
 <!-- This page provides an overview of the museum, including its mission statement, who it serves, when it was founded, and key milestones in its history. -->
 <div class="container">
+
     <header class="header">
         <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
     </header>
+
     <nav class="nav_bar">
         <a href="../index.html">Home</a>
         <a href="explore.html">Explore</a>
         <a href="exhibitions.html">Exhibitions</a>
-        <a href="buytickets.html">Buy Tickets</a>
+        <a href="buytickets.html" class="cta">Buy Tickets</a>
         <!-- Hamburger icon -->
         <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">&#9776;</a>
     </nav>
@@ -46,22 +48,77 @@
             MonoMuse serves artists, students, researchers, and visitors who are interested in the intersection of art and technology. The museum welcomes people of all backgrounds who want to explore innovative exhibitions and interactive creative experiences.
         </p>
 
-        <h2>Founding Year</h2>
+        <h2>About MonoMuse</h2>
         <p>
             MonoMuse was founded in 2016 with the goal of creating a space where art, technology, and human creativity could come together through immersive exhibitions and digital media.
         </p>
+            <ul>
+                <li>2016: MonoMuse opens with its first exhibition on digital storytelling.</li>
+                <li>2018: Launch of the Interactive Media Lab for hands-on creative coding.</li>
+                <li>2023: Expansion of the museum and international artist collaborations.</li>
+            </ul>
 
-        <h2>Milestones</h2>
-        <ul>
-            <li>2016: MonoMuse opens with its first exhibition on digital storytelling.</li>
-            <li>2018: Launch of the Interactive Media Lab for hands-on creative coding.</li>
-            <li>2023: Expansion of the museum and international artist collaborations.</li>
-        </ul>
+        <h2>Hours of Operation</h2>
+        <table
+            <tr>
+                <th>Day</th>
+                <th>Hours</th>
+            </tr>
+            <tr>
+                <td>Monday-Friday</td>
+                <td>10:00 AM - 6:00 PM</td>
+            </tr>
+            <tr>
+                <td>Saturday</td>
+                <td>10:00 AM - 8:00 PM</td>
+            </tr>
+            <tr>
+                <td>Sunday</td>
+                <td>12:00 AM - 6:00 PM</td>
+            </tr>
+        </table>
 
         <h2>Visit MonoMuse</h2>
+        <p>4800 Butler Street, Pittsburgh, PA 15213 | (412) 555-1234 | info@monomuse.org</p>
             <div id="map"></div>
 
-        <a href="buytickets.html">Buy Tickets</a>
+        <h2>Membership & Donations</h2>
+        <p>Support MonoMuse by becoming a member or making a donation. Your contribution helps us continue our mission of exploring the intersection of art and technology.</p>
+
+        <div id="membership">
+            <div class="info-card">
+                <button class="info-button">
+                    Friendship Membership - $50/year
+                </button>
+                <div class="info-content">
+                    <p>Unlimited free general admission for one year, a 10% discount in the museum shop, and our monthly newsletter delivered to your inbox.</p>
+                </div>
+            </div>
+            <div class="info-card">
+                <button class="info-button">
+                    Supporter Membership - $120/year
+                </button>
+                <div class="info-content">
+                    <p>All Friendship Membership benefits, plus a 15% discount in the museum shop, and invitations to members-only events.</p>
+                </div>
+            </div>
+            <div class="info-card">
+                <button class="info-button">
+                    Patron Membership - $250/year
+                </button>
+                <div class="info-content">
+                    <p>All Supporter Membership benefits, plus a 20% discount in the museum
+                    shop, and a behind-the-scenes tour of the museum.</p>
+                </div>
+            </div>
+        </div>
+
+        <h3>Donate</h3>
+        <p> Prefer to make a one-time donation? Any amount helps us continue grow our collection, fund our programs, and support our mission. Contact us at <a href="mailto:info@monomuse.org">info@monomuse.org</a> to learn more.</p>
+
+
+        <p><a href="views/buytickets.html" class="cta cta-block">Buy Tickets</a></p>
+
     </main>
 
     <footer class="footer">

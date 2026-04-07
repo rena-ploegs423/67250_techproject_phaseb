@@ -18,14 +18,16 @@
 
 <!-- This page displays information about the museum's current exhibitions. -->
 <div class="container">
+
     <header class="header">
         <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
     </header> 
+
     <nav class="nav_bar">
         <a href="../index.html">Home</a>
         <a href="explore.html">Explore</a>
         <a href="exhibitions.html">Exhibitions</a>
-        <a href="buytickets.html">Buy Tickets</a>
+        <a href="buytickets.html" class="cta">Buy Tickets</a>
         <!-- Hamburger icon -->
         <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">&#9776;</a>
     </nav>
@@ -33,6 +35,33 @@
 <!-- Each exhibition has a title and a brief description of what visitors can expect to see and experience. -->
     <main class="main">
         <h1>Exhibitions</h1>
+
+        <h2>Gallery</h2>
+        <div id="gallery" class="gallery">
+ 
+            <div class="slide active-slide">
+                <img src="../static/museum.png" alt="MonoMuse museum exterior during dayt">
+                <p class="slide-caption">MonoMuse - Butler Street, Pittsburgh</p>
+            </div>
+ 
+            <div class="slide">
+                <img src="../static/museum2.png" alt="MonoMuse museum exterior at nightd">
+                <p class="slide-caption">MonoMuse at Dusk — Sculpture Garden & Reflecting Pool</p>
+            </div>
+ 
+            <div class="slide">
+                <img src="../static/museum3.png" alt="MonoMuse interior atrium at night with visitors viewing large metal sculpture installations under floor-to-ceiling glass walls overlooking the city">
+                <p class="slide-caption">MonoMuse Interior — Main Atrium & Gallery</p>
+            </div>
+ 
+            <!-- controls -->
+            <div id="galleryControls">
+                <button id="prevSlide" aria-label="Show previous gallery image">&#8592; Prev</button>
+                <span id="slideCounter" aria-live="polite">1 / 3</span>
+                <button id="nextSlide" aria-label="Show next gallery image">Next &#8594;</button>
+            </div>
+ 
+        </div>
         <h2>Exhibition 1: Reflections in Motion</h2>
 
         <p>
@@ -50,13 +79,35 @@
             asks how technology preserves, reshapes, and reimagines the stories we carry with us. 
         </p>
 
+        <h2>Exhibition Schedule</h2>
+        <table>
+            <tr>
+                <th>Exhibition</th>
+                <th>Dates</th>
+                <th>Admission</th>
+
+            </tr>
+            <tr>
+                <td>Reflections in Motion</td>
+                <td>June 1 - September 30, 2024</td>
+                <td>Included with entry</td>
+            </tr>
+            <tr>
+                <td>Future Memory</td>
+                <td>October 15, 2024 - January 15, 2025</td>
+                <td>Included with entry</td>
+            </tr>
+
         <h2>Featured Exhibition Experience</h2>
-            <iframe 
+        <iframe 
             src="https://www.youtube.com/embed/Nxh-5EXXGaM"
             title="Museum Exhibition Video"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen>
-            </iframe>
+        </iframe>
+
+        <p><a href="buytickets.html" class="cta">Buy Tickets to Visit</a></p>
+
     </main>
 
     <footer class="footer">
