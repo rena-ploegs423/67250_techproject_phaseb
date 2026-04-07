@@ -132,10 +132,15 @@ function toggleMenu() {
 
 
 // Initialize the map using Leaflet.js
-var map = L.map('map').setView([40.467459, -79.963749], 14);
+if (document.getElementById("map")) {
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; OpenStreetMap contributors'
-}).addTo(map);
+  var map = L.map('map').setView([40.467459, -79.963749], 14);
 
-L.marker([40.467459, -79.963749]).addTo(map);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  L.marker([40.467459, -79.963749]).addTo(map)
+    .bindPopup("MonoMuse - Butler St")
+    .openPopup();
+}
