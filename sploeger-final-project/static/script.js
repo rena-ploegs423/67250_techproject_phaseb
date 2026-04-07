@@ -39,13 +39,13 @@ function greeting(x) {
     var el = document.getElementById("greeting");
     if (el) {
         if (x < 5 || x >= 20) {
-            el.innerHTML = "Good Night — Welcome to MonoMuse";
+            el.innerHTML = "Good Night - Welcome to MonoMuse";
         } else if (x < 12) {
-            el.innerHTML = "Good Morning — Welcome to MonoMuse";
+            el.innerHTML = "Good Morning - Welcome to MonoMuse";
         } else if (x < 18) {
-            el.innerHTML = "Good Afternoon — Welcome to MonoMuse";
+            el.innerHTML = "Good Afternoon - Welcome to MonoMuse";
         } else {
-            el.innerHTML = "Good Evening — Welcome to MonoMuse";
+            el.innerHTML = "Good Evening - Welcome to MonoMuse";
         }
     }
 }
