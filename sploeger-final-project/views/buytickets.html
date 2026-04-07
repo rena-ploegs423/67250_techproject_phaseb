@@ -2,37 +2,37 @@
 <html lang="en">
 <head>
     <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
-    <script src="../static/script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../static/style.css">
     <meta name="author" content="Serena Ploeger">
     <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
-    <meta name="description" content="MonoMuse website redesign project">
+    <meta name="description" content="Buy tickets to visit MonoMuse Museum of Art and Technology in Pittsburgh, PA">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tickets | MonoMuse</title>
+    <title>Buy Tickets | MonoMuse</title>
 </head>
 
-<body> 
+<body>
 
-<!-- This page provides information about ticket prices and types. It includes a table that lists the different ticket options -->
+<!-- Ticket checkout page: pricing table, hours, and semi-functioning purchase form with validation -->
 <div class="container">
+
     <header class="header">
-        <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
-    </header>    
+        <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum of Art and Technology logo">
+    </header>
+
     <nav class="nav_bar">
         <a href="../index.html">Home</a>
         <a href="explore.html">Explore</a>
         <a href="exhibitions.html">Exhibitions</a>
         <a href="buytickets.html" class="cta">Buy Tickets</a>
-        <!-- Hamburger icon -->
-        <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">&#9776;</a>
- 
+        <a href="javascript:void(0);" class="icon" onclick="toggleMenu()" aria-label="Toggle navigation menu">&#9776;</a>
     </nav>
-    
+
     <main class="main">
         <h1>Buy Tickets</h1>
+
         <h2>Ticket Prices</h2>
         <table>
             <tr>
@@ -42,29 +42,29 @@
             </tr>
             <tr>
                 <td>Adult (General)</td>
-                <td>General admission for 18+. Under 18 free of charge.</td>
+                <td>General admission for adults 18+. Under 18 free of charge.</td>
                 <td>$18</td>
             </tr>
             <tr>
                 <td>Student</td>
-                <td>Valid student ID required.</td>
+                <td>Valid student ID required at entry.</td>
                 <td>$15</td>
             </tr>
             <tr>
                 <td>Member</td>
-                <td>Valid member ID required.</td>
+                <td>Valid member ID required at entry.</td>
                 <td>$10</td>
             </tr>
         </table>
 
         <h2>Hours of Operation</h2>
-        <table
+        <table>
             <tr>
                 <th>Day</th>
                 <th>Hours</th>
             </tr>
             <tr>
-                <td>Monday-Friday</td>
+                <td>Monday - Friday</td>
                 <td>10:00 AM - 6:00 PM</td>
             </tr>
             <tr>
@@ -73,184 +73,95 @@
             </tr>
             <tr>
                 <td>Sunday</td>
-                <td>12:00 AM - 6:00 PM</td>
+                <td>12:00 PM - 6:00 PM</td>
             </tr>
         </table>
-
 
         <h2>Purchase Tickets</h2>
 
         <div id="checkoutForm">
-            <form id="ticketForm">
-                <!-- Visit Date -->
+            <form id="ticketForm" novalidate>
+
+                <p><label for="visitDate">Visit Date: <span class="required-star" aria-hidden="true">*</span></label></p>
                 <p>
-                    <label for="visitDate">Visit Date: (required)</label>
-                </p>
-                <p>
-                    <input type="date" id="visitDate" name="visitDate" required>
+                    <input type="date" id="visitDate" name="visitDate" aria-required="true">
                     <span class="error-msg" id="visitDateError" role="alert">Please select a visit date.</span>
                 </p>
-                
-                <!-- Ticket Type -->
+
+                <!-- option values must match keys in the prices object in script.js -->
+                <p><label for="ticketType">Ticket Type: <span class="required-star" aria-hidden="true">*</span></label></p>
                 <p>
-                    <label for="ticketType">Ticket Type: (required)</label>
-                </p>
-                <p>
-                    <select id="ticketType" name="ticketType" required>
-                        <option value="">Select a ticket type</option>
-                        <option value="adult">Adult (General)</option>
-                        <option value="student">Student</option>
-                        <option value="member">Member</option>
+                    <select id="ticketType" name="ticketType" aria-required="true" onchange="updatePrice()">
+                        <option value="">-- Select a ticket type --</option>
+                        <option value="adult">Adult (General) - $18</option>
+                        <option value="student">Student - $15</option>
+                        <option value="member">Member - $10</option>
                     </select>
                     <span class="error-msg" id="ticketTypeError" role="alert">Please select a ticket type.</span>
                 </p>
 
-                <!-- Ticket Quantity -->
+                <p><label for="quantity">Number of Tickets (1-10): <span class="required-star" aria-hidden="true">*</span></label></p>
                 <p>
-                    <label for="quantity">Number of Tickets: (required)</label>
-                </p>
-                <p>
-                    <input type="number" id="quantity" name="quantity" required>
-                    <span class="error-msg" id="quantityError" role="alert">Please enter a valid number of tickets.</span>
+                    <input type="number" id="quantity" name="quantity" min="1" max="10" placeholder="Enter a number 1-10" aria-required="true" oninput="updatePrice()">
+                    <span class="error-msg" id="quantityError" role="alert">Please enter a whole number between 1 and 10.</span>
                 </p>
 
-                <!-- Calculated Price-->
+                <!-- price updates live via updatePrice() in script.js -->
                 <p id="priceDisplay">Estimated Total: <strong id="totalPrice">$0.00</strong></p>
 
-                <!-- Email -->
+                <p><label for="email">Email Address: <span class="required-star" aria-hidden="true">*</span></label></p>
                 <p>
-                    <label for="email">Email: (required)</label>
-                </p>
-                <p>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" aria-required="true">
                     <span class="error-msg" id="emailError" role="alert">Please enter a valid email address.</span>
                 </p>
 
-                <!-- Zip Code -->
-                <p>
-                    <label for="zip">Zip Code: (optional)</label>
-                </p>
+                <p><label for="zipCode">Zip Code (optional):</label></p>
                 <p>
                     <input type="text" id="zipCode" name="zipCode" placeholder="5-digit zip code" maxlength="5">
                     <span class="error-msg" id="zipCodeError" role="alert">Zip code must be exactly 5 digits.</span>
                 </p>
 
-                <!-- Mailing List -->
-                <p>
-                    <label for="mailingList">Join Mailing List: (optional)</label>
-                </p>
-                <p>
-                    <input type="checkbox" id="mailingList" name="mailingList">
-                    <span class="error-msg" id="mailingListError" role="alert">Please select an option.</span>
+                <p class="checkbox-row">
+                    <label>
+                        <input type="checkbox" id="mailingList" name="mailingList">
+                        Join our mailing list for upcoming events and exhibitions
+                    </label>
                 </p>
 
-                <!-- Submit Button -->
-                <p>
-                    <button type="submit" onclick="alert('Redirecting to payment system.')">Submit Order</button>
-                </p>
+                <!-- calls submitOrder() in script.js -->
+                <p><button type="button" class="cta" onclick="submitOrder()">Place Order</button></p>
+                <p class="form-note"><span class="required-star" aria-hidden="true">*</span> Required fields</p>
+
             </form>
         </div>
-        
-        <div id="confirmationSection" style="display:none;" role="region" aria-label="Order confirmation"></div>
-            <h2>Order Confirmed!</h2>
-            <p>Thank you for your purchase. A confirmation email has been sent to you.</p>
-            <p>We look forward to welcoming you to MonoMuse! Here is a summary of your order:</p>
-            <table>
-                <tr>
-                    <th>Visit Date</th>
-                    <th>Ticket Type</th>
-                    <th>Quantity</th>
-                    <th>Total Price</th>
-                </tr>
-                <tr>
-                    <td id="confirmVisitDate"></td>
-                    <td id="confirmTicketType"></td>
-                    <td id="confirmQuantity"></td>
-                    <td id="confirmTotalPrice"></td>
-                </tr>
-            </table>
-            <p>If you have any questions about your order, please contact us at support@monomuse.com.</p>
 
-        <h2>Available Dates</h2>
-        <table>
-            <tr>
-                <th>Date</th>
-                <th>Time</th>
-                <th>Availability</th>
-                <th>Action</th>
-            </tr>
-            <tr>
-                <td> April 10, 2026</td>
-                <td>10:00 AM</td>
-                <td>Available</td>
-               <td><button onclick="showForm()">Buy Now</button></td>
-            </tr>
-            <tr>
-                <td> April 10, 2026</td>
-                <td>11:00 AM</td>
-                <td>Available</td>
-                <td><button onclick="showForm()">Buy Now</button></td>
-            </tr>
-            <tr>
-                <td> April 10, 2026</td>
-                <td>12:00 PM</td>
-                <td>Available</td>
-                <td><button onclick="showForm()">Buy Now</button></td>
-            </tr>
-            <tr>
-                <td> April 11, 2026</td>
-                <td>10:00 AM</td>
-                <td>Available</td>
-               <td><button onclick="showForm()">Buy Now</button></td>
-            </tr>
-            <tr>
-                <td> April 11, 2026</td>
-                <td>11:00 AM</td>
-                <td>Available</td>
-                <td><button onclick="showForm()">Buy Now</button></td>
-            </tr>
-            <tr>
-                <td> April 12, 2026</td>
-                <td>12:00 PM</td>
-                <td>Available</td>
-                <td><button onclick="showForm()">Buy Now</button></td>
-            </tr>
-        </table>  
-        
-    <div id="purchaseForm">
-        <h2>Purchase Tickets</h2>
-        <form>
-            <p>
-                <label for="name">Name: (required)</label>
-            </p>
-            <p>
-                <input type="text" id="name" name="name" required>
-            </p>
-            <p>
-                <label for="email">Email: (required)</label>
-            </p>
-            <p>
-                <input type="email" id="email" name="email" required>
-            </p>
-            <p>
-                <label for="quantity">Number of Tickets: (required)</label>
-            </p>
-            <p>
-                <input type="number" id="quantity" name="quantity" required>
-            </p>
-            <p>
-                <button type="submit" onclick="alert('Redirecting to payment system.')">Submit</button>
-            </p>
-        </form>
-    </div>
+        <!-- revealed by submitOrder() in script.js after successful validation -->
+        <div id="confirmationSection" style="display:none;" role="region" aria-label="Order confirmation">
+            <h2>Order Confirmed!</h2>
+            <p>Thank you for your purchase. We look forward to welcoming you to MonoMuse!</p>
+            <table>
+                <tr><th>Detail</th><th>Value</th></tr>
+                <tr><td>Visit Date</td><td id="confirmDate"></td></tr>
+                <tr><td>Ticket Type</td><td id="confirmType"></td></tr>
+                <tr><td>Number of Tickets</td><td id="confirmQty"></td></tr>
+                <tr><td>Total Cost</td><td id="confirmTotal"></td></tr>
+            </table>
+            <p>A confirmation will be sent to <strong id="confirmEmail"></strong>.</p>
+            <p>Questions? Contact us at <a href="mailto:support@monomuse.org">support@monomuse.org</a>.</p>
+            <p class="form-note"><em>This is a simulated checkout. No payment has been processed.</em></p>
+            <!-- calls resetForm() in script.js -->
+            <button class="cta" onclick="resetForm()">Buy More Tickets</button>
+        </div>
+
     </main>
+
     <footer class="footer">
         <p id="copyYear"></p>
     </footer>
+
 </div>
 
+<script src="../static/script.js"></script>
 
 </body>
 </html>
-
-

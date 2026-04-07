@@ -8,100 +8,102 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../static/style.css">
     <meta name="author" content="Serena Ploeger">
-    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
-    <meta name="description" content="MonoMuse website redesign project">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems, exhibitions, art, technology">
+    <meta name="description" content="Explore current exhibitions at MonoMuse Museum of Art and Technology in Pittsburgh, PA">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exhibitions | MonoMuse</title>
 </head>
 
-<body> 
+<body>
 
-<!-- This page displays information about the museum's current exhibitions. -->
+<!-- Exhibitions page: showcases current exhibitions, an interactive image gallery, and an embedded video -->
 <div class="container">
 
     <header class="header">
-        <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
-    </header> 
+        <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum of Art and Technology logo">
+    </header>
 
     <nav class="nav_bar">
         <a href="../index.html">Home</a>
         <a href="explore.html">Explore</a>
         <a href="exhibitions.html">Exhibitions</a>
         <a href="buytickets.html" class="cta">Buy Tickets</a>
-        <!-- Hamburger icon -->
-        <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">&#9776;</a>
+        <!-- Hamburger icon for mobile navigation -->
+        <a href="javascript:void(0);" class="icon" onclick="toggleMenu()" aria-label="Toggle navigation menu">&#9776;</a>
     </nav>
- 
-<!-- Each exhibition has a title and a brief description of what visitors can expect to see and experience. -->
+
     <main class="main">
         <h1>Exhibitions</h1>
 
+        <!-- Interactive image gallery / slideshow -->
         <h2>Gallery</h2>
-        <div id="gallery" class="gallery">
- 
+        <div id="gallery" role="region" aria-label="MonoMuse photo gallery">
+
             <div class="slide active-slide">
-                <img src="../static/museum.png" alt="MonoMuse museum exterior during dayt">
-                <p class="slide-caption">MonoMuse - Butler Street, Pittsburgh</p>
+                <img src="../static/museum.png" alt="MonoMuse museum exterior during daytime with visitors walking the grounds and the Pittsburgh skyline visible in the background">
+                <p class="slide-caption">MonoMuse Museum - Butler Street, Pittsburgh</p>
             </div>
- 
+
             <div class="slide">
-                <img src="../static/museum2.png" alt="MonoMuse museum exterior at nightd">
-                <p class="slide-caption">MonoMuse at Dusk — Sculpture Garden & Reflecting Pool</p>
+                <img src="../static/museum2.png" alt="MonoMuse museum exterior at dusk, the building and its neon sign reflected in a still reflecting pool, Pittsburgh skyline behind">
+                <p class="slide-caption">MonoMuse at Dusk - Sculpture Garden &amp; Reflecting Pool</p>
             </div>
- 
+
             <div class="slide">
                 <img src="../static/museum3.png" alt="MonoMuse interior atrium at night with visitors viewing large metal sculpture installations under floor-to-ceiling glass walls overlooking the city">
-                <p class="slide-caption">MonoMuse Interior — Main Atrium & Gallery</p>
+                <p class="slide-caption">MonoMuse Interior - Main Atrium &amp; Gallery</p>
             </div>
- 
-            <!-- controls -->
+
+            <!-- Gallery navigation controls -->
             <div id="galleryControls">
                 <button id="prevSlide" aria-label="Show previous gallery image">&#8592; Prev</button>
                 <span id="slideCounter" aria-live="polite">1 / 3</span>
                 <button id="nextSlide" aria-label="Show next gallery image">Next &#8594;</button>
             </div>
- 
-        </div>
-        <h2>Exhibition 1: Reflections in Motion</h2>
 
+        </div>
+
+        <!-- Current exhibitions -->
+        <h2>Exhibition 1: Reflections in Motion</h2>
         <p>
             This exhibition examines how light, sound, and movement can shape the way visitors
             experience a space. Through immersive installations and interactive digital works,
-            Reflections in Motion invites guests to consider how technology can transform ordinary
-            environments into artistic experiences. 
+            <em>Reflections in Motion</em> invites guests to consider how technology can transform ordinary
+            environments into artistic experiences.
         </p>
 
         <h2>Exhibition 2: Future Memory</h2>
-
         <p>
-            Future Memory explores the relationship between personal memory and digital archives.
+            <em>Future Memory</em> explores the relationship between personal memory and digital archives.
             Featuring multimedia pieces, projection art, and interactive storytelling, the exhibition
-            asks how technology preserves, reshapes, and reimagines the stories we carry with us. 
+            asks how technology preserves, reshapes, and reimagines the stories we carry with us.
         </p>
 
+        <!-- Exhibition schedule table -->
         <h2>Exhibition Schedule</h2>
         <table>
             <tr>
                 <th>Exhibition</th>
                 <th>Dates</th>
                 <th>Admission</th>
-
             </tr>
             <tr>
                 <td>Reflections in Motion</td>
-                <td>June 1 - September 30, 2024</td>
+                <td>May 1, 2026 - September 30, 2026</td>
                 <td>Included with entry</td>
             </tr>
             <tr>
                 <td>Future Memory</td>
-                <td>October 15, 2024 - January 15, 2025</td>
+                <td>October 15, 2025 - June 15, 2026</td>
                 <td>Included with entry</td>
             </tr>
+        </table>
 
+        <!-- YouTube video-->
         <h2>Featured Exhibition Experience</h2>
-        <iframe 
+        <iframe
             src="https://www.youtube.com/embed/Nxh-5EXXGaM"
-            title="Museum Exhibition Video"
+            title="MonoMuse Museum Exhibition Video - immersive digital art experience walkthrough"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen>
         </iframe>
@@ -113,9 +115,8 @@
     <footer class="footer">
         <p id="copyYear"></p>
     </footer>
+
 </div>
 
 </body>
 </html>
-
-

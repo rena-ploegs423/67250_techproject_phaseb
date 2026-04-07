@@ -4,25 +4,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/style.css">    
+    <link rel="stylesheet" href="../static/style.css">
+    <!-- Leaflet.js CSS for the interactive map – https://leafletjs.com/ -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <!-- Leaflet.js JS – https://leafletjs.com/ -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <!-- jQuery for the membership accordion – https://jquery.com/ -->
     <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
     <script src="../static/script.js" defer></script>
     <meta name="author" content="Serena Ploeger">
-    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
-    <meta name="description" content="MonoMuse website redesign project">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems, about, location, membership">
+    <meta name="description" content="Learn about MonoMuse Museum – mission, hours, location, and membership options">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explore | MonoMuse</title>
 </head>
 
-<body> 
+<body>
 
-<!-- This page provides an overview of the museum, including its mission statement, who it serves, when it was founded, and key milestones in its history. -->
+<!-- Explore page: museum overview, hours of operation, interactive location map, and membership/donation info -->
 <div class="container">
 
     <header class="header">
-        <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
+        <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum of Art and Technology logo">
     </header>
 
     <nav class="nav_bar">
@@ -30,42 +33,42 @@
         <a href="explore.html">Explore</a>
         <a href="exhibitions.html">Exhibitions</a>
         <a href="buytickets.html" class="cta">Buy Tickets</a>
-        <!-- Hamburger icon -->
-        <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">&#9776;</a>
+        <!-- Hamburger icon for mobile navigation -->
+        <a href="javascript:void(0);" class="icon" onclick="toggleMenu()" aria-label="Toggle navigation menu">&#9776;</a>
     </nav>
-    
+
     <main class="main">
         <h1>Explore</h1>
-        <img src="../static/museum.png" alt="MonoMuse building exterior" width="300">
+
+        <img src="../static/museum.png" alt="MonoMuse museum building exterior with visitors walking the grounds and the Pittsburgh skyline visible in the background" class="page-img">
 
         <h2>Mission Statement</h2>
         <p>
-            MonoMuse is dedicated to exploring the evolving relationship between art, technology, and society. The museum highlights innovative exhibitions that showcase how digital tools, emerging technologies, and human creativity are shaping the future of artistic expression.  
+            MonoMuse is dedicated to exploring the evolving relationship between art, technology, and society. The museum highlights innovative exhibitions that showcase how digital tools, emerging technologies, and human creativity are shaping the future of artistic expression.
         </p>
-        
+
         <h2>Who MonoMuse Serves</h2>
         <p>
             MonoMuse serves artists, students, researchers, and visitors who are interested in the intersection of art and technology. The museum welcomes people of all backgrounds who want to explore innovative exhibitions and interactive creative experiences.
         </p>
 
         <h2>About MonoMuse</h2>
-        <p>
-            MonoMuse was founded in 2016 with the goal of creating a space where art, technology, and human creativity could come together through immersive exhibitions and digital media.
-        </p>
-            <ul>
-                <li>2016: MonoMuse opens with its first exhibition on digital storytelling.</li>
-                <li>2018: Launch of the Interactive Media Lab for hands-on creative coding.</li>
-                <li>2023: Expansion of the museum and international artist collaborations.</li>
-            </ul>
+        <p>MonoMuse was founded in 2016 with the goal of creating a space where art, technology, and human creativity could come together through immersive exhibitions and digital media.</p>
+        <ul>
+            <li>2016: MonoMuse opens with its first exhibition on digital storytelling.</li>
+            <li>2018: Launch of the Interactive Media Lab for hands-on creative coding.</li>
+            <li>2023: Expansion of the museum and international artist collaborations.</li>
+        </ul>
 
+        <!-- Hours of operation table -->
         <h2>Hours of Operation</h2>
-        <table
+        <table>
             <tr>
                 <th>Day</th>
                 <th>Hours</th>
             </tr>
             <tr>
-                <td>Monday-Friday</td>
+                <td>Monday - Friday</td>
                 <td>10:00 AM - 6:00 PM</td>
             </tr>
             <tr>
@@ -74,59 +77,62 @@
             </tr>
             <tr>
                 <td>Sunday</td>
-                <td>12:00 AM - 6:00 PM</td>
+                <td>12:00 PM - 6:00 PM</td>
             </tr>
         </table>
 
+        <!-- map -->
         <h2>Visit MonoMuse</h2>
-        <p>4800 Butler Street, Pittsburgh, PA 15213 | (412) 555-1234 | info@monomuse.org</p>
-            <div id="map"></div>
+        <p>4800 Butler Street, Pittsburgh, PA 15213 | (412) 555-1234 | <a href="mailto:info@monomuse.org">info@monomuse.org</a></p>
+        <div id="map" aria-label="Interactive map showing MonoMuse location on Butler Street, Pittsburgh"></div>
 
+        <!-- Membership accordion -->
         <h2>Membership & Donations</h2>
-        <p>Support MonoMuse by becoming a member or making a donation. Your contribution helps us continue our mission of exploring the intersection of art and technology.</p>
+        <p>Support MonoMuse by becoming a member or making a donation. Your contribution helps us continue our mission of exploring the intersection of art and technology. Click a tier below to learn more.</p>
 
-        <div id="membership">
-            <div class="info-card">
-                <button class="info-button">
-                    Friendship Membership - $50/year
+        <div id="membershipAccordion">
+
+            <div class="accordion-item">
+                <button class="accordion-btn" aria-expanded="false">
+                    Friend Membership – $50/year
                 </button>
-                <div class="info-content">
+                <div class="accordion-content">
                     <p>Unlimited free general admission for one year, a 10% discount in the museum shop, and our monthly newsletter delivered to your inbox.</p>
                 </div>
             </div>
-            <div class="info-card">
-                <button class="info-button">
-                    Supporter Membership - $120/year
+
+            <div class="accordion-item">
+                <button class="accordion-btn" aria-expanded="false">
+                    Supporter Membership – $120/year
                 </button>
-                <div class="info-content">
-                    <p>All Friendship Membership benefits, plus a 15% discount in the museum shop, and invitations to members-only events.</p>
+                <div class="accordion-content">
+                    <p>All Friend benefits, plus a 15% discount in the museum shop, two guest passes per visit, and invitations to members-only events.</p>
                 </div>
             </div>
-            <div class="info-card">
-                <button class="info-button">
-                    Patron Membership - $250/year
+
+            <div class="accordion-item">
+                <button class="accordion-btn" aria-expanded="false">
+                    Patron Membership – $250/year
                 </button>
-                <div class="info-content">
-                    <p>All Supporter Membership benefits, plus a 20% discount in the museum
-                    shop, and a behind-the-scenes tour of the museum.</p>
+                <div class="accordion-content">
+                    <p>All Supporter benefits, plus a 20% discount in the museum shop and a behind-the-scenes tour of the museum.</p>
                 </div>
             </div>
+
         </div>
 
         <h3>Donate</h3>
-        <p> Prefer to make a one-time donation? Any amount helps us continue grow our collection, fund our programs, and support our mission. Contact us at <a href="mailto:info@monomuse.org">info@monomuse.org</a> to learn more.</p>
+        <p>Prefer to make a one-time donation? Any amount helps us grow our collection, fund our programs, and support our mission. Contact us at <a href="mailto:info@monomuse.org">info@monomuse.org</a> to learn more.</p>
 
-
-        <p><a href="views/buytickets.html" class="cta cta-block">Buy Tickets</a></p>
+        <p><a href="buytickets.html" class="cta cta-block">Buy Tickets</a></p>
 
     </main>
 
     <footer class="footer">
         <p id="copyYear"></p>
     </footer>
+
 </div>
 
 </body>
 </html>
-
-

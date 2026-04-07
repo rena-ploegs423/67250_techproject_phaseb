@@ -9,51 +9,58 @@
     <link rel="stylesheet" href="./static/style.css">
     <meta name="author" content="Serena Ploeger">
     <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
-    <meta name="description" content="MonoMuse website redesign project">
+    <meta name="description" content="MonoMuse is a Pittsburgh museum dedicated to art, technology, and human creativity. Plan your visit, explore exhibitions, and buy tickets online.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MonoMuse</title>
+    <title>MonoMuse | Museum of Art + Technology</title>
 </head>
 
-<body onload="addYear()"> 
+<body>
 
+<!-- Home page: introduces MonoMuse, provides a time-based greeting, and directs visitors to key areas of the site -->
 <div class="container">
+
     <header class="header">
-        <img id="logo" src="./static/monomuselogo.png" alt="MonoMuse Museum Logo">
+        <img id="logo" src="./static/monomuselogo.png" alt="MonoMuse Museum of Art and Technology logo">
     </header>
+
     <nav class="nav_bar">
         <a href="index.html">Home</a>
         <a href="views/explore.html">Explore</a>
         <a href="views/exhibitions.html">Exhibitions</a>
         <a href="views/buytickets.html" class="cta">Buy Tickets</a>
-        <!-- Hamburger icon -->
-        <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">&#9776;</a>
+        <!-- Hamburger icon for mobile navigation -->
+        <a href="javascript:void(0);" class="icon" onclick="toggleMenu()" aria-label="Toggle navigation menu">&#9776;</a>
     </nav>
 
     <main class="main">
-        <h1 id="greeting">Welcome to the MonoMuse Museum</h1>
+
+        <h1 id="greeting">Welcome to MonoMuse</h1>
 
         <div class="hero-img-wrap">
-            <img src="./static/museum2.png" alt="MonoMuse museum exterior at night with pool">
+            <img src="./static/museum2.png" alt="MonoMuse museum exterior at dusk, with the building reflected in a still pool and the Pittsburgh skyline in the background" class="hero-img">
         </div>
 
         <p id="shortIntro">MonoMuse is a modern museum focused on the relationship between art, technology, and human expression. Our exhibitions feature innovative digital works, interactive installations, and constantly evolving collections that highlight how technology is shaping contemporary creativity. Visitors are invited to explore new ideas, engage with immersive experiences, and discover how artistic expression is evolving in a digital world. Whether you are visiting for the first time or returning to see something new, MonoMuse offers inspiring exhibitions, hands-on activities, and events that celebrate creativity and curiosity.</p>
-        <button id="readMore">Read More</button>
+
+        <button id="readMore" aria-expanded="false" aria-controls="longIntro">Read More</button>
 
         <p id="longIntro">At MonoMuse, we believe that art and technology are not separate disciplines but deeply interconnected forces that shape how we understand ourselves and the world around us. Our curated exhibitions bring together artists, designers, engineers, and thinkers who are pushing the boundaries of creative expression. From large-scale immersive installations to intimate digital works, every piece in our collection is chosen to spark conversation, inspire curiosity, and challenge the way we see the world. Beyond our exhibitions, MonoMuse offers a rich calendar of events, workshops, and educational programs designed for visitors of all ages and backgrounds. Whether you are a seasoned art lover, a technology enthusiast, or simply looking for a unique and inspiring experience, MonoMuse has something for you. We are committed to making art accessible, engaging, and relevant to everyone who walks through our doors.</p>
-        <button id="readLess">Read Less</button>
+
+        <button id="readLess" aria-expanded="true" aria-controls="longIntro">Read Less</button>
+
 
         <div class="info-strip">
             <div class="info-card">
                 <h2>Hours</h2>
-                <p>Mon-Fri: 10 AM - 6 PM</p>
-                <p>Sat: 10 AM - 8 PM</p>
-                <p>Sun: 12 PM - 6 PM</p>
+                <p>Mon–Fri: 10 AM – 6 PM</p>
+                <p>Sat: 10 AM – 8 PM</p>
+                <p>Sun: 12 PM – 6 PM</p>
             </div>
             <div class="info-card">
                 <h2>Admission</h2>
-                <p>Adult (Under 18 free of charge): $18</p>
-                <p>Student: $10</p>
-                <p>Member: $15</p>
+                <p>Adult: $18 (under 18 free)</p>
+                <p>Student: $15</p>
+                <p>Member: $10</p>
             </div>
             <div class="info-card">
                 <h2>Location</h2>
@@ -67,13 +74,16 @@
 
     </main>
 
-        <footer class="footer">
-            <p id="copyYear"></p>
-        </footer>
+    <aside class="main_img">
+        <img src="./static/museum3.png" alt="MonoMuse interior atrium at night with visitors viewing sculpture installations and floor-to-ceiling glass walls overlooking the Pittsburgh skyline" class="side-img">
+    </aside>
+
+    <footer class="footer">
+        <p id="copyYear"></p>
+    </footer>
+
 </div>
 
 
 </body>
 </html>
-
-

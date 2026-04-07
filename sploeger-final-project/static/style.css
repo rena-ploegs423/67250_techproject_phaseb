@@ -1,52 +1,51 @@
-/* Global styling for the MonoMuse Museum website */
+
 * {
   margin: 5px;
   padding: 5px;
   font-family: 'Open Sans', sans-serif;
   font-optical-sizing: auto;
-  font-weight: 100;
-  line-height: 1.5;
+  font-weight: 300;
+  line-height: 1.6;
   background: #FAF9EF;
   color: #0F1F2E;
+  box-sizing: border-box;
 }
 
-/* Header logo styling */
+/*  Header Logo  */
 #logo {
   width: 35%;
   display: block;
 }
 
-/* Navigation styling */
+/*  Navigation  */
 nav a {
   text-decoration: none;
   color: #0F1F2E;
   font-weight: 400;
-  padding: 8px 10px;
+  padding: 8px 12px;
   border: 1px solid transparent;
   border-radius: 12px;
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
-/* Hover effect for navigation items */
 nav a:hover {
   border-color: #727e63;
   background-color: #727e63;
   color: #FAF9EF;
 }
 
-/* Styling for the selected navigation item */
+/* Active navigation link */
 .active {
   color: #FFA033;
 }
 
-/* Hover effect for the selected navigation item */
 .active:hover {
   border-color: #727e63;
   background-color: #727e63;
   color: #FAF9EF;
 }
 
-/* Call-to-action button styling */
+/*  Call-to-action Button / Link  */
 .cta {
   background-color: #FFA033;
   color: #0F1F2E;
@@ -59,13 +58,12 @@ nav a:hover {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* Hover effect for call-to-action buttons */
 .cta:hover {
   background-color: #727e63;
   color: #FAF9EF;
-  border: none;
 }
 
+/* Block-level CTA link (used on home page) */
 .cta-block {
   display: inline-block;
   margin: 16px 0;
@@ -73,7 +71,7 @@ nav a:hover {
   font-size: 1rem;
 }
 
-/* Footer styling */
+/*  Footer  */
 footer {
   border-top: 2px solid #0F1F2E;
   padding: 18px 16px;
@@ -81,8 +79,7 @@ footer {
   color: #727e63;
 }
 
-
-/* Table styling */
+/*  Tables  */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -96,47 +93,31 @@ th {
   text-align: left;
   font-weight: 600;
 }
- 
+
 td {
   padding: 8px 12px;
 }
 
-/* Alternate row colors for better readability */
 tr:nth-child(odd) td {
   background-color: #9BCFE8;
 }
 
-/* Global styling */
+/*  CSS Grid Layout  */
 .container {
-  display: grid; /* Turns this div into a CSS Grid layout */
-  grid-template-areas:   /* Defines the layout structure */
+  display: grid;
+  grid-template-areas:
     'header header'
     'nav_bar nav_bar'
     'main main-img'
     'footer footer';
-  grid-template-columns: 1fr 320px; 
+  grid-template-columns: 1fr 320px;
 }
 
-/* Places each element into the correct area of the grid */
-.header {
-   grid-area: header; 
-}
-.nav_bar {
-   grid-area: nav_bar;
-   display: flex; /* Uses Flexbox for internal layout */
-   justify-content: flex-end;  
-   gap: 10px; 
-}
-/**/
-.main {
-  grid-area: main; 
-}
-.main_img {
-   grid-area: main-img; 
-}
-.footer {
-   grid-area: footer;
-}
+.header   { grid-area: header; }
+.nav_bar  { grid-area: nav_bar; display: flex; justify-content: flex-end; align-items: center; gap: 8px; padding: 6px 16px; }
+.main     { grid-area: main; padding: 16px; }
+.main_img { grid-area: main-img; }
+.footer   { grid-area: footer; }
 
 .hero-img-wrap {
   width: 100%;
@@ -144,27 +125,25 @@ tr:nth-child(odd) td {
   overflow: hidden;
   border-radius: 10px;
   margin: 12px 0;
-  background: #0F1F2E
+  background: #0F1F2E;
 }
 
 .hero-img {
   width: 100%;
-  height: auto;
+  height: 380px;
   object-fit: cover;
   display: block;
   border-radius: 10px;
   background: #0F1F2E;
 }
 
-/* Sidebar image in the aside column */
 .side-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
- 
-/* Page-level image (used on Explore) */
+
 .page-img {
   width: 100%;
   max-width: 500px;
@@ -180,7 +159,7 @@ tr:nth-child(odd) td {
   flex-wrap: wrap;
   background: transparent;
 }
- 
+
 .info-card {
   flex: 1;
   min-width: 160px;
@@ -189,7 +168,7 @@ tr:nth-child(odd) td {
   border-radius: 12px;
   padding: 14px 16px;
 }
- 
+
 .info-card h2 {
   font-size: 1rem;
   font-weight: 700;
@@ -197,7 +176,7 @@ tr:nth-child(odd) td {
   background: transparent;
   margin-bottom: 6px;
 }
- 
+
 .info-card p {
   font-size: 0.9rem;
   color: #FAF9EF;
@@ -205,24 +184,22 @@ tr:nth-child(odd) td {
   margin: 2px 0;
   line-height: 1.5;
 }
- 
+
 .info-card a {
   color: #9BCFE8;
   background: transparent;
   font-weight: 500;
 }
- 
+
 .info-card a:hover {
   color: #FFA033;
   background: transparent;
 }
- 
-/* --- Read More / Read Less
-   Toggle logic handled by jQuery in script.js --- */
+
 #readLess, #longIntro {
   display: none;
 }
- 
+
 #readLess, #readMore {
   font-style: italic;
   background-color: #727e63;
@@ -234,20 +211,20 @@ tr:nth-child(odd) td {
   font-size: 0.9rem;
   transition: background-color 0.2s ease;
 }
- 
+
 #readLess:hover, #readMore:hover {
   background-color: #FFA033;
   color: #0F1F2E;
 }
- 
-/* --- Hamburger / Mobile Nav --- */
+
+/*  Hamburger / Mobile Nav  */
 .nav_bar .icon {
   display: none;
 }
- 
-/* --- Responsive Design (mobile) --- */
+
+/*  Responsive Design (mobile)  */
 @media only screen and (max-width: 650px) {
- 
+
   .container {
     grid-template-areas:
       'header'
@@ -257,45 +234,45 @@ tr:nth-child(odd) td {
       'footer';
     grid-template-columns: 1fr;
   }
- 
+
   .nav_bar a:not(.icon) {
     display: none;
   }
- 
+
   .nav_bar .icon {
     display: block;
     margin-left: auto;
     cursor: pointer;
     font-size: 24px;
   }
- 
+
   /* Stack all nav links vertically when hamburger is toggled */
   .nav_bar.responsive {
     flex-direction: column;
     align-items: flex-start;
   }
- 
+
   .nav_bar.responsive a:not(.icon) {
     display: block;
     width: 100%;
     text-align: left;
   }
- 
+
   .nav_bar.responsive .icon {
     display: block;
     align-self: flex-end;
   }
- 
+
   .info-strip {
     flex-direction: column;
   }
- 
+
   .hero-img {
     height: 220px;
   }
 }
- 
-/* --- Iframe (embedded video) --- */
+
+/*  Iframe (embedded video)  */
 iframe {
   width: 100%;
   max-width: 800px;
@@ -304,7 +281,6 @@ iframe {
   margin: 20px auto;
   background: #0F1F2E;
 }
- 
 
 #map {
   height: 400px;
@@ -312,7 +288,6 @@ iframe {
   margin: 10px 0 20px;
   background: #9BCFE8;
 }
- 
 
 #gallery {
   position: relative;
@@ -322,17 +297,17 @@ iframe {
   border-radius: 10px;
   overflow: hidden;
 }
- 
+
 .slide {
   display: none;
   text-align: center;
   background: #0F1F2E;
 }
- 
+
 .slide.active-slide {
   display: block;
 }
- 
+
 .slide img {
   width: 100%;
   max-height: 420px;
@@ -340,7 +315,7 @@ iframe {
   display: block;
   background: #0F1F2E;
 }
- 
+
 .slide-caption {
   color: #FAF9EF;
   background: #0F1F2E;
@@ -349,7 +324,7 @@ iframe {
   font-size: 0.88rem;
   font-style: italic;
 }
- 
+
 #galleryControls {
   display: flex;
   justify-content: center;
@@ -358,7 +333,7 @@ iframe {
   padding: 10px 14px;
   background: #0F1F2E;
 }
- 
+
 #galleryControls button {
   background-color: #FFA033;
   color: #0F1F2E;
@@ -370,12 +345,12 @@ iframe {
   font-size: 0.9rem;
   transition: background-color 0.2s ease;
 }
- 
+
 #galleryControls button:hover {
   background-color: #727e63;
   color: #FAF9EF;
 }
- 
+
 #slideCounter {
   color: #FAF9EF;
   font-size: 0.9rem;
@@ -383,19 +358,19 @@ iframe {
   min-width: 40px;
   text-align: center;
 }
- 
+
 #membershipAccordion {
   max-width: 700px;
   margin: 12px 0 20px;
 }
- 
+
 .accordion-item {
   border: 1px solid #0F1F2E;
   border-radius: 8px;
   margin-bottom: 8px;
   overflow: hidden;
 }
- 
+
 .accordion-btn {
   width: 100%;
   text-align: left;
@@ -409,34 +384,34 @@ iframe {
   transition: background-color 0.2s ease;
   border-radius: 0;
 }
- 
+
 .accordion-btn:hover {
   background-color: #727e63;
 }
- 
+
 /* Visual indicator that a panel is open */
 .accordion-btn[aria-expanded="true"] {
   background-color: #727e63;
 }
- 
+
 /* Hidden by default; revealed by jQuery slideDown */
 .accordion-content {
   display: none;
   padding: 12px 16px;
   background: #FAF9EF;
 }
- 
+
 .accordion-content p {
   text-align: left;
   margin: 0;
   background: #FAF9EF;
 }
- 
+
 
 #checkoutForm, #confirmationSection {
   max-width: 600px;
 }
- 
+
 /* Form inputs and selects */
 select,
 input[type="date"],
@@ -454,19 +429,19 @@ input[type="text"] {
   color: #0F1F2E;
   transition: outline 0.15s ease;
 }
- 
+
 select:focus,
 input:focus {
   outline: 2px solid #FFA033;
   outline-offset: 1px;
 }
- 
+
 /* Left-align all form paragraphs */
 form p {
   margin: 6px 0;
   text-align: left;
 }
- 
+
 form label {
   font-weight: 500;
   font-size: 0.95rem;
@@ -474,15 +449,15 @@ form label {
   margin-bottom: 4px;
   background: transparent;
 }
- 
+
 /* Required field asterisk */
 .required-star {
   color: #c0392b;
   font-weight: 700;
   background: transparent;
 }
- 
-/* Inline error messages – hidden by default, shown by submitOrder() on invalid input */
+
+/* Inline error messages - hidden by default, shown by submitOrder() on invalid input */
 .error-msg {
   display: none;
   color: #c0392b;
@@ -490,7 +465,7 @@ form label {
   margin-top: 4px;
   background: transparent;
 }
- 
+
 /* Live price display */
 #priceDisplay {
   font-size: 1.1rem;
@@ -498,14 +473,14 @@ form label {
   font-weight: 500;
   background: transparent;
 }
- 
+
 #totalPrice {
   color: #FFA033;
   font-size: 1.4rem;
   font-weight: 700;
   background: transparent;
 }
- 
+
 /* Checkbox row */
 .checkbox-row {
   display: flex;
@@ -513,7 +488,7 @@ form label {
   gap: 8px;
   margin: 10px 0;
 }
- 
+
 .checkbox-row label {
   display: flex;
   align-items: center;
@@ -521,7 +496,7 @@ form label {
   font-weight: 400;
   background: transparent;
 }
- 
+
 input[type="checkbox"] {
   width: 18px;
   height: 18px;
@@ -529,8 +504,8 @@ input[type="checkbox"] {
   cursor: pointer;
   flex-shrink: 0;
 }
- 
-/* Small italic note */
+
+/* Small italic error message */
 .form-note {
   font-size: 0.85rem;
   color: #727e63;
@@ -538,8 +513,8 @@ input[type="checkbox"] {
   margin-top: 10px;
   background: transparent;
 }
- 
-/* Confirmation section – revealed by submitOrder() after valid submission */
+
+/* Confirmation section */
 #confirmationSection {
   border: 2px solid #727e63;
   border-radius: 12px;
@@ -547,7 +522,7 @@ input[type="checkbox"] {
   margin-top: 16px;
   background: #FAF9EF;
 }
- 
+
 #confirmationSection h2 {
   color: #727e63;
   background: transparent;
